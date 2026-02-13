@@ -70,6 +70,8 @@ import kotlin.math.roundToInt
  */
 @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
 class Camera2ApiManager(context: Context) : CameraDevice.StateCallback() {
+    var metadataListener: ((android.hardware.camera2.CaptureResult) -> Unit)? = null
+
     private val TAG = "Camera2ApiManager"
 
     private var cameraDevice: CameraDevice? = null
